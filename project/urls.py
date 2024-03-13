@@ -19,5 +19,6 @@ from django.urls import path, include
 from mysite.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', frontpage, name='index')
+    path('', include('mysite.urls')),
+    path('subdominio/', include('mysite.urls')),
 ]
