@@ -1,18 +1,18 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
 </head>
 <body>
-    <h1>home page</h1>
+  <h1>Está é a home page do site</h1>
 
-    <p>Olá {{name}} seja bem-vindo</p>
-
-    <a href="sobre/">Vá para página sobre</a>
-    
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+  
+  
 </body>
 </html>

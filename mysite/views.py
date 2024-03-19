@@ -1,9 +1,8 @@
 from django.shortcuts import render
+from http import HTTPMethod
 
-def home(request):
-    return render(request, 'mysite/index.html', context={
-        'name': 'Samir'
-    })
+def index(request):
+    return render(request, 'mysite/index.html')
 
 def sobre(request):
     return render(request, 'mysite/sobre.html')

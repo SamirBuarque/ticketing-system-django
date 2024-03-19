@@ -1,10 +1,15 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import *
 from django.urls import path, include
+from userprofile.views import signup
+from django.contrib.auth import views
+from userprofile.views import *
 
 urlpatterns = [
-    path('', views.home, name='index'),
-    path('sobre/', views.sobre, name="sobre"),
-    path('login/', views.login, name="login"),
+    path('', views.LoginView.as_view(template_name='userprofile/login.html'), name='login'),
+    path('sobre/', sobre, name="sobre"),
+    path('index/', index, name="index"),
+    path('signup/', signup, name='signup'),
+    path('logout/', logout.as_view(), name='logout'),
 ]
