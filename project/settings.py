@@ -29,9 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = '/index/'
-LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = 'logout'
+#LOGIN_REDIRECT_URL = '/login/'
+#LOGIN_URL = 'login'
+#LOGOUT_REDIRECT_URL = 'logout'
 
 
 
