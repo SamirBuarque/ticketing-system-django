@@ -3,10 +3,15 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import UserProfile
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
-@login_required
+
+#@login_required
 def index(request):
-    return render(request, 'mysite/index.html')
+    if not request.user.is_authenticated:
+        return redirect(f"{settings.LOGIN_URL}?next={request.path}")
+    else:
+        return render(request, 'mysite/index.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -43,7 +48,7 @@ def custom_login(request):
 
 def custom_logout(request):
     logout(request)
-    return redirect("custom_logout")
+    return redirect("custom_login")
     
     
 

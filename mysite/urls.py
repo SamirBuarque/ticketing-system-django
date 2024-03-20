@@ -11,5 +11,5 @@ urlpatterns = [
     path('login/', custom_login, name="custom_login"),
     path('sobre/', sobre, name="sobre"),
     path('signup/', signup, name='signup'),
-    path('logout/', custom_logout, name='logout'),
+    path('logout/', custom_logout, name='custom_logout'),
 ]
