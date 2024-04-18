@@ -9,7 +9,8 @@ from django.conf import settings
 #@login_required
 def index(request):
     if not request.user.is_authenticated:
-        return redirect(f"{settings.LOGIN_URL}?next={request.path}")
+        return redirect("custom_login")
+        #return redirect(f"{settings.LOGIN_URL}?next={request.path}")
     else:
         return render(request, 'mysite/index.html')
 
