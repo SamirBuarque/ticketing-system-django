@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mysite.views import *
-from userprofile.views import signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
