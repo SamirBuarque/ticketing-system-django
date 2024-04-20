@@ -3,12 +3,9 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.utils import timezone
 
 class UserProfile(models.Model):
-    user_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     password = models.CharField(max_length=128)
-
     # adiciona automaticamente a data de criação desse usuario
-    #created_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     """ Armazenar no banco de dados o hash gerado """
